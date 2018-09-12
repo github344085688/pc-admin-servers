@@ -21,7 +21,7 @@ module.exports = function (app) {
        app.use(jwtKoa({secret}).unless({
             path: [/^\/api\/login/,/^\/api\/signIn/,/^\/api\/createbd/] //数组中的路径不需要通过jwt验证
         }));
-
+/*
         if (ctx.request.url == '/logIn' || ctx.request.url == '/signIn'){
 
             let content ={msg:ctx.request.body.username + ctx.request.body.password}; // 要生成token的主题信息
@@ -35,15 +35,16 @@ module.exports = function (app) {
                 message: 'success'
             }
             //await next();
-        }
-        else {
-            const token = ctx.headers['x-access-token'];
-            if (token ) await next();
-            else  ctx.body = {
-                token: 'Token Expired' ,
-                code: 200,
-                message: 'success'
-            }
+        }*/
+        /*else {
+
+        }*/
+        const token = ctx.headers['x-access-token'];
+        if (token ) await next();
+        else  ctx.body = {
+            token: 'Token Expired' ,
+            code: 200,
+            message: 'success'
         }
 
         //先去执行路由
