@@ -2,9 +2,6 @@ const router = require('koa-router')();
 const _ = require('lodash');
 
 module.exports = function (app) {
-
-
-
     router.post('/add', async function (ctx, next) {
         ctx.response.type = 'application/json';
         try {
@@ -20,7 +17,7 @@ module.exports = function (app) {
 
             ctx.body = ssa;
         } catch (error) {
-            console.log(error)
+
         }
     });
 
