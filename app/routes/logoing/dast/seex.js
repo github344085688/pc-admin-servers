@@ -3,16 +3,16 @@ const _ = require('lodash');
 
 module.exports = function (app) {
     router.post('/add', async function (ctx, next) {
-        ctx.response.type = 'application/json';
         try {
             let userData = ctx.request.body;
             // let sda = await mongodbOperation(this).find('correctly');
             let porems={
-                tableName:'/login',
+                tableName:'/user',
                 dataBase:'user',
                 insertData:ctx.request.body,
                 createIndex:userData['username']
             }
+            console.log(userData.username)
             let ssa = await mongodbOperation(this).insert(porems);
 
             ctx.body = ssa;

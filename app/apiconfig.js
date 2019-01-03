@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken')
 const secretOrPrivateKey = "I am a goog man!" ;
 module.exports = function (app) {
     const apiconfig = async (ctx, next) => {
-        ctx.response.type = 'application/json';
         if (ctx.request.url == '/logIn' || ctx.request.url == '/signIn') {
            await next();
         }

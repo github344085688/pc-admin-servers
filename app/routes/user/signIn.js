@@ -1,0 +1,40 @@
+/**
+ * Created by f on 2019/1/3.
+ */
+const router = require('koa-router')();
+const jwt = require('jsonwebtoken');
+module.exports = function (app) {
+    router.post('/signIn', async function (ctx, next) {
+        try {
+            const userPorems = ctx.request.body;
+            let porems = {
+                tableName: '/user',
+                dataBase: 'user',
+                insertData: userPorems,
+                createIndex: userPorems.userName
+            }
+            let userDetail = await mongodbOperation(this).find(porems, {
+                userName: userPorems.userName
+            });
+            if (userDetail && userDetail.length > 0) {
+                ctx.body = {
+                    msg: 'The user name already exists',
+                    code: 100,
+                    message: 'success'
+                }
+            } else {
+                let content = {msg: userPorems.userName + userPorems.passWord};
+                userPorems.token = await jwt.sign(content, app.jwtConfig.secretOrPrivateKey, {
+                    expiresIn: app.jwtConfig.expiresIn
+                });
+                porems.insertData = userPorems;
+                ctx.body = await mongodbOperation(this).insert(porems);
+            }
+        } catch (error) {
+            ctx.body = 'Protected resource, use Authorization header to get access\n';
+        }
+    });
+
+    app.use(router.routes());
+    app.use(router.allowedMethods());
+};

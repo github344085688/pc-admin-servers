@@ -13,10 +13,11 @@ let service = (app, ctx) => {
      * @returns {Promise.<*>}
      */
 
-    async function find(dbName, operation = null, filter = null) {
+    async function find(porems, operation = null, filter = null) {
         try {
-            const db = monk(app.mongoConfig.MONGO_URL + collections);
-            const counters = db.get(dbName);
+            let path = porems.tableName ? app.mongoConfig.MONGO_URL + porems.tableName : app.mongoConfig.MONGO_URL;
+            const db = monk(path);
+            const counters = db.get(porems.dataBase);
             let returnData;
             if (!filter) returnData = await counters.find(operation);
             if (filter) returnData = await counters.find(operation, filter);
@@ -42,9 +43,9 @@ let service = (app, ctx) => {
             await counters.insert(porems.insertData);
             if (porems.createIndex) await counters.createIndex(porems.createIndex);
             await  counters.indexes().then((indexes) => {
-                 console.log(indexes);
+                // console.log(indexes);
             })
-            returnData =await counters.find();
+            returnData = await counters.find();
             db.close();
             return returnData;
         }
@@ -80,12 +81,13 @@ let service = (app, ctx) => {
      * @param newOperation
      * @returns {Promise.<*>}
      */
-    async function update(dbName, oldOperation, newOperation) {
+    async function update(porems, oldOperation = null, newOperation = null) {
         try {
-            const db = monk(app.mongoConfig.MONGO_URL + collections);
+            let path = porems.tableName ? app.mongoConfig.MONGO_URL + porems.tableName : app.mongoConfig.MONGO_URL;
+            let db = monk(path);
             let returnData;
-            const counters = db.get(dbName);
-            returnData = await counters.update(oldOperation, newOperation);
+            const counters = db.get(porems.dataBase);
+            returnData = await counters.update(porems.oldOperation, porems.newOperation);
             db.close();
             return returnData;
         }
