@@ -1,6 +1,4 @@
-const router = require('koa-router')();
-const _ = require('lodash');
-module.exports = function (app) {
+module.exports = app => {
     router.post('/createbd', async function (ctx, next) {
         try {
             let userData = ctx.request.body;
@@ -20,6 +18,4 @@ module.exports = function (app) {
             console.log(error)
         }
     });
-    app.use(router.routes());
-    app.use(router.allowedMethods());
 };

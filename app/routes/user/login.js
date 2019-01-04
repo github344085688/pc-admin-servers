@@ -1,6 +1,5 @@
-const router = require('koa-router')();
 const jwt = require('jsonwebtoken');
-module.exports = function (app) {
+module.exports = app =>{
     router.post('/login', async function (ctx, next) {
         try {
             const userPorems = ctx.request.body;
@@ -50,6 +49,4 @@ module.exports = function (app) {
         }
     });
 
-    app.use(router.routes());
-    app.use(router.allowedMethods());
 };

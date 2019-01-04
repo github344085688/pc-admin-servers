@@ -1,9 +1,8 @@
 /**
  * Created by f on 2019/1/3.
  */
-const router = require('koa-router')();
 const jwt = require('jsonwebtoken');
-module.exports = function (app) {
+module.exports = app => {
     router.post('/signIn', async function (ctx, next) {
         try {
             const userPorems = ctx.request.body;
@@ -34,7 +33,4 @@ module.exports = function (app) {
             ctx.body = 'Protected resource, use Authorization header to get access\n';
         }
     });
-
-    app.use(router.routes());
-    app.use(router.allowedMethods());
 };

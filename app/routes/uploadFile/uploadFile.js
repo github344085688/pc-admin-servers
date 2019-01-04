@@ -1,5 +1,4 @@
 const fs = require('fs')
-const router = require('koa-router')();
 const multer = require('koa-multer');
 const path = require('path');
 module.exports = app => {
@@ -26,7 +25,5 @@ module.exports = app => {
             ctx.body = 'upload error';
         }
     });
-    app.use(router.routes());
-    app.use(router.allowedMethods());
 }
 

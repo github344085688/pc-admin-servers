@@ -1,20 +1,15 @@
-const router = require('koa-router')();
-const _ = require('lodash');
-
-module.exports = function (app) {
+module.exports = app => {
     router.post('/add', async function (ctx, next) {
         try {
             let userData = ctx.request.body;
-            // let sda = await mongodbOperation(this).find('correctly');
-            let porems={
-                tableName:'/user',
-                dataBase:'user',
-                insertData:ctx.request.body,
-                createIndex:userData['username']
+            let porems = {
+                tableName: '/user',
+                dataBase: 'user',
+                insertData: ctx.request.body,
+                createIndex: userData['username']
             }
             console.log(userData.username)
             let ssa = await mongodbOperation(this).insert(porems);
-
             ctx.body = ssa;
         } catch (error) {
 
@@ -26,6 +21,4 @@ module.exports = function (app) {
         await itemSpecService(this).fillItemName(ds);
         ctx.body = sda;
     });
-    app.use(router.routes());
-    app.use(router.allowedMethods());
 };
