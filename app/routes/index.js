@@ -6,7 +6,6 @@ const serve = require('koa-static');
 module.exports = app => {
     app.use(bodyParser());
     app.use(cors());
-
     app.use(serve(path.resolve('publick', 'upload')));
     (function requestRoutes(dirname) {
         fs.readdirSync(dirname).forEach(file => {//同步 readdir().返回文件数组列表

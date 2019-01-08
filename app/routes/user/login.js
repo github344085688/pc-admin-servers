@@ -19,8 +19,8 @@ module.exports = app =>{
                     passWord: userPorems.passWord
                 };
                 let content = {msg: userPorems.userName + userPorems.passWord};
-                let token = await jwt.sign(content, app.jwtConfig.secretOrPrivateKey, {
-                    expiresIn: app.jwtConfig.expiresIn
+                let token = await jwt.sign(content, jwtConfig.secretOrPrivateKey, {
+                    expiresIn: jwtConfig.expiresIn
                 });
                 porems.newOperation ={
                     userName: userPorems.userName,

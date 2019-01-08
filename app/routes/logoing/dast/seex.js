@@ -1,5 +1,5 @@
 module.exports = app => {
-    router.post('/add', async function (ctx, next) {
+    router.post('/add', async (ctx, next) => {
         try {
             let userData = ctx.request.body;
             let porems = {
@@ -16,9 +16,8 @@ module.exports = app => {
         }
     });
 
-    router.get('/outbound/order/:orderId', async function (ctx, next) {
-        let ds = {request: ctx.params}
-        await itemSpecService(this).fillItemName(ds);
-        ctx.body = sda;
+    router.post('/outbound/order/', async  (ctx, next)=> {
+        let ssa = await mysqlOperation(this).find();
+        ctx.body = ssa;
     });
 };
