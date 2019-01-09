@@ -7,26 +7,13 @@ module.exports = app =>{
                 tableName: '/user',
                 dataBase: 'user',
             };
-
-            let userDetail = await mongodbOperation(this).find(porems, {
-                userName: userPorems.userName,
-                passWord: userPorems.passWord,
-            });
-
+            let userDetail = await mongodbOperation(this).find(porems,userPorems);
             if (userDetail.length > 0) {
-                porems.oldOperation = {
-                    userName: userPorems.userName,
-                    passWord: userPorems.passWord
-                };
+                porems.oldOperation = userPorems;
                 let content = {msg: userPorems.userName + userPorems.passWord};
-                let token = await jwt.sign(content, jwtConfig.secretOrPrivateKey, {
-                    expiresIn: jwtConfig.expiresIn
-                });
-                porems.newOperation ={
-                    userName: userPorems.userName,
-                    passWord: userPorems.passWord,
-                    token:token
-                }
+                let token = await utilServices(this).token(content);
+                porems.newOperation = userPorems;
+                porems.newOperation.token = token;
                 let updateToken = await mongodbOperation(this).update(porems);
                 if(updateToken.ok==1){
                     ctx.body= porems.newOperation

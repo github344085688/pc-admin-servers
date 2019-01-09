@@ -41,15 +41,12 @@
 
 const mysql = require('promise-mysql');
 let service = (app, ctx) => {
-    async function find() {
+    async function execSql(sql) {
         let pool = mysql.createPool(mysqlConfig);
-        let nulls= await pool.count('*');
-        return await pool.query('SELECT * FROM usert');
+        return await pool.query(sql);
     }
-
     return {
-        find,
-
+        execSql,
     }
 
 }

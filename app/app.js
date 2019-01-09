@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const app = new Koa();
-require('./commons/util')(app);
+require('./commons/globals')(app);
 require('./routes')(app);
 require('./db')(app);
 require('./services')(app);

@@ -1,9 +1,17 @@
+const jwt = require('jsonwebtoken');
 let service = (app, ctx) => {
-    async function fillItemName(objects) {
-        objects.lo = "司法所贷款啥电话费"
+    async function token(Porems) {
+        try{
+            return await jwt.sign(Porems, jwtConfig.secretOrPrivateKey, {
+                expiresIn: jwtConfig.expiresIn
+            });
+        }catch(error) {
+            return error
+        }
+
     }
     return {
-        fillItemName,
+        token,
     }
 }
 

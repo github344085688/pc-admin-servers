@@ -1,11 +1,24 @@
-/**
- * Created by f on 2018/8/23.
- */
-const monk = require('monk')
-let service = (app, ctx) => {
-    const collections = mongoConfig.MONGO_DBNAME;
-
     /**
+     * Created by f on 2018/8/23.
+     */
+    const monk = require('monk')
+    let instance;
+    let service = (app, ctx) => {
+        async function linkDatabase(porems) {
+            try {
+                return new Promise((resolve, reject) =>{
+                    let path = porems.tableName ? mongoConfig.MONGO_URL + porems.tableName : mongoConfig.MONGO_URL;
+                    const db = monk(path);
+                    const counters = db.get(porems.dataBase);
+                    resolve({counters: counters, db: db});
+                });
+            }
+            catch (error) {
+                return error;
+            }
+        }
+    /**
+     *
      *
      * @param dbName
      * @param operation
@@ -15,13 +28,12 @@ let service = (app, ctx) => {
 
     async function find(porems, operation = null, filter = null) {
         try {
-            let path = porems.tableName ? mongoConfig.MONGO_URL + porems.tableName : mongoConfig.MONGO_URL;
-            const db = monk(path);
-            const counters = db.get(porems.dataBase);
+
+            const database = await linkDatabase(porems);
             let returnData;
-            if (!filter) returnData = await counters.find(operation);
-            if (filter) returnData = await counters.find(operation, filter);
-            db.close();
+            if (!filter) returnData = await database.counters.find(operation)
+            if (filter) returnData = await database.counters.find(operation, filter);
+            database.db.close();
             return returnData
         }
         catch (error) {
@@ -36,17 +48,14 @@ let service = (app, ctx) => {
      */
     async function insert(porems) {
         try {
-            let path = porems.tableName ? mongoConfig.MONGO_URL + porems.tableName : mongoConfig.MONGO_URL;
-            let db = monk(path);
-            let returnData;
-            const counters = await db.get(porems.dataBase);
-            await counters.insert(porems.insertData);
-            if (porems.createIndex) await counters.createIndex(porems.createIndex);
-            await  counters.indexes().then((indexes) => {
+            const database = await linkDatabase(porems);
+            await database.counters.insert(porems.insertData);
+            if (porems.createIndex) await database.counters.createIndex(porems.createIndex);
+            await  database.counters.indexes().then((indexes) => {
                 // console.log(indexes);
             })
-            returnData = await counters.find();
-            db.close();
+            let returnData = await database.counters.find();
+            database.db.close();
             return returnData;
         }
         catch (error) {
@@ -60,13 +69,12 @@ let service = (app, ctx) => {
      * @param operation
      * @returns {Promise.<*>}
      */
-    async function remove(dbName, operation) {
+    async function remove(porems, operation) {
         try {
-            const db = monk(mongoConfig.MONGO_URL + collections);
+            const database = await linkDatabase(porems);
             let returnData;
-            const counters = db.get(dbName);
-            returnData = await counters.remove(operation);
-            db.close();
+            returnData = await database.counters.remove(operation);
+            database.db.close();
             return returnData;
         }
         catch (error) {
@@ -83,17 +91,14 @@ let service = (app, ctx) => {
      */
     async function update(porems, oldOperation = null, newOperation = null) {
         try {
-            let path = porems.tableName ? mongoConfig.MONGO_URL + porems.tableName : mongoConfig.MONGO_URL;
-            let db = monk(path);
+            const database = await linkDatabase(porems);
             let returnData;
-            const counters = db.get(porems.dataBase);
-            returnData = await counters.update(porems.oldOperation, porems.newOperation);
-            db.close();
+            returnData = await database.counters.update(porems.oldOperation, porems.newOperation);
+            database.db.close();
             return returnData;
         }
         catch (error) {
             return error
-
         }
     }
 

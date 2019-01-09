@@ -23,9 +23,7 @@ module.exports = app => {
                 }
             } else {
                 let content = {msg: userPorems.userName + userPorems.passWord};
-                userPorems.token = await jwt.sign(content, app.jwtConfig.secretOrPrivateKey, {
-                    expiresIn: app.jwtConfig.expiresIn
-                });
+                userPorems.token = await utilServices(this).token(content);
                 porems.insertData = userPorems;
                 ctx.body = await mongodbOperation(this).insert(porems);
             }

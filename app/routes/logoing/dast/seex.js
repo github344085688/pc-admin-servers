@@ -17,7 +17,17 @@ module.exports = app => {
     });
 
     router.post('/outbound/order/', async  (ctx, next)=> {
-        let ssa = await mysqlOperation(this).find();
-        ctx.body = ssa;
+        let sql=`insert into usert (name,age) values ('kjds','18')`;
+        await mysqlOperation(this).execSql(sql);
+        let findSql=`select * from usert`;
+        // let ssa = await mysqlOperation(this).execSql(findSql);
+        let deletesql=`delete from usert where name='154asdh'`;
+        await mysqlOperation(this).execSql(deletesql);
+        let updatesql=`update usert set name='ssasd' where name='kjds'`;
+        await mysqlOperation(this).execSql(updatesql)
+        let countsql=`select count(*) as totalcount  from usert`;
+        let ssa = await mysqlOperation(this).execSql(countsql);
+
+        ctx.body = ssa ;
     });
 };
