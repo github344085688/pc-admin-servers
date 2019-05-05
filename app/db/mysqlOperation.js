@@ -61,6 +61,15 @@ let service = (app, ctx) => {
         }
     }
 
+    async function selectTotalcountByDb(operationdb) {
+        try {
+            let sql = `SELECT COUNT(${operationdb.key}) as totalcount  FROM ${operationdb.tableName}`;
+            return await execSql(sql, operationdb.dataBase)
+        } catch (e) {
+            return e
+        }
+    }
+
     async function insertDbs(porems, operationdb) {
         try {
             let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
@@ -138,7 +147,6 @@ let service = (app, ctx) => {
                 totalcount:totalcounts[0].totalcount,
                 totalPage:Math.ceil(totalPage)　
             }
-            // SELECT id,col01 FROM pagetest order by id desc limit 10,5
             let sql = `SELECT ${searchCriteriaByKey} FROM ${operationdb.tableName} LIMIT ${paging.startIndex},${paging.endIndex}`;
             return {
                 data:await execSql(sql, operationdb.dataBase),
@@ -149,21 +157,35 @@ let service = (app, ctx) => {
         }
     }
 
-    async function selectTotalcountByDb(operationdb) {
-        try {
-            let sql = `SELECT COUNT(${operationdb.key}) as totalcount  FROM ${operationdb.tableName}`;
-            return await execSql(sql, operationdb.dataBase)
-        } catch (e) {
-            return e
-        }
+    async function selectDetail (porems, operationdb) {
+        let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
+        let searchCriteriaByKey =_.keys(_.pick(porems, filterTitleName));
+        let searchString='';
+        _.forEach(searchCriteriaByKey,(item,index)=>{
+            if (index < searchCriteriaByKey.length-1) {
+                searchString +=`${item}='${porems[item]}' and `
+            }else {
+                searchString +=`${item}='${porems[item]}'`
+            }
+
+        })
+        let sql = `SELECT * FROM ${operationdb.tableName} WHERE ${searchString}`;
+        return await execSql(sql, operationdb.dataBase)
     }
+
+    async function selectId (porems, id) {
+        let sql = `SELECT * FROM ${porems.tableName} WHERE id=${id}`;
+        return await execSql(sql, porems.dataBase)
+    }
+
 
     return {
         insertDbs,
         updateDbs,
         deleteDb,
         selectByPagingDb,
-        selectTotalcountByDb,
+        selectDetail,
+        selectId,
         execSql
     }
 
