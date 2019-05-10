@@ -20,6 +20,7 @@ module.exports = function (app) {
 
         // Content-Type表示具体请求中的媒体类型信息
         ctx.set("Content-Type", "application/json;charset=utf-8");
+        ctx.set("Content-Type", "application/x-www-form-urlencoded");
 
         // 该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。
         // 当设置成允许请求携带cookie时，需要保证"Access-Control-Allow-Origin"是服务器有的域名，而不能是"*";
@@ -46,7 +47,10 @@ module.exports = function (app) {
         await next();
     })
     const apiconfig = async (ctx, next) => {
-        if ( RegExp(/user/).test(ctx.request.url)) {
+        // app.use(jwtKoa({secret}).unless({
+        //     path: [/^\/api\/login/,/^\/api\/signIn/,/^\/api\/createbd/] //数组中的路径不需要通过jwt验证
+        // }));
+        if ( RegExp('/user/').test(ctx.request.url)) {
             let isVerifyToken = await jwt.verify(ctx.header['x-access-token'], secretOrPrivateKey, async(err, decode)=> {
                 if (err) {
                     ctx.body={err:err};

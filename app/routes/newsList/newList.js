@@ -1,5 +1,5 @@
 module.exports = app => {
-    router.post('/addnewList', async function (ctx, next) {
+    router.post('/addnewList', async (ctx, next)=> {
         let porems = ctx.request.body;
         let message;
         await mysqlOperation(this).insertDbs(porems, {dataBase: 'persons', tableName: 'pagetest'}).then(res => {
@@ -10,7 +10,7 @@ module.exports = app => {
         ctx.body = {"inser": message};
     });
 
-    router.put('/upnewList', async function (ctx, next) {
+    router.put('/upnewList', async (ctx, next)=> {
         let porems = ctx.request.body;
         let message;
         await mysqlOperation(this).updateDbs(porems, {dataBase: 'persons', tableName: 'pagetest'}).then(res => {
@@ -21,7 +21,7 @@ module.exports = app => {
         ctx.body = {"inserssss": message};
     });
 
-    router.delete('/deleteList/:id', async function (ctx, next) {
+    router.delete('/deleteList/:id', async (ctx, next)=> {
         let deletes = ctx.params;
         let id = deletes.id;
         let message;
@@ -35,7 +35,7 @@ module.exports = app => {
         ctx.body = {"inserssss": message};
     });
 
-    router.post('/newList-select-by-paging', async function (ctx, next) {
+    router.post('/newList-select-by-paging', async (ctx, next)=> {
         let porems = ctx.request.body;
         let message;
         await mysqlOperation(this).selectByPagingDb(porems, {
@@ -49,7 +49,7 @@ module.exports = app => {
         ctx.body = {"inserssss": message};
     });
 
-    router.post('/selects', async function (ctx, next) {
+    router.post('/selects', async (ctx, next)=>{
         let porems = ctx.request.body;
         let message;
         await mysqlOperation(this).selectDetail(porems, {
@@ -63,7 +63,7 @@ module.exports = app => {
         ctx.body = {"data": message};
     });
 
-    router.post('/selects/:id', async function (ctx, next) {
+    router.post('/selects/:id', async (ctx, next)=> {
         let deletes = ctx.params;
         let id = deletes.id;
         let message;

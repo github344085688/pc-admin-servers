@@ -1,0 +1,15 @@
+Cache-Control:no-cache
+Content-Type:application/x-www-form-urlencoded
+Postman-Token:de1193c4-f636-4d8b-8d0f-f47f024c4901
+x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NTczOTM0NTMsImV4cCI6MTU1NzQ3OTg1M30.Kc-RM26D7FIJ1uGRn0IiElq0X8-QuZbmi-vvMkm8B-c
+
+
+
+curl -X POST \
+  http://localhost:3000/uploadfile \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Postman-Token: d9dbca33-249e-40e6-9802-6141ea514eee' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NTczOTM0NTMsImV4cCI6MTU1NzQ3OTg1M30.Kc-RM26D7FIJ1uGRn0IiElq0X8-QuZbmi-vvMkm8B-c' \
+  -F 'file=@C:\Users\f\Pictures\323653.jpg'
