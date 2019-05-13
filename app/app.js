@@ -5,6 +5,8 @@ require('./routes')(app);
 require('./db')(app);
 require('./services')(app);
 require('./apiconfig')(app);
+require('./conf.js')(app);
+require('./logger.js')(app);
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(function(ctx, next){

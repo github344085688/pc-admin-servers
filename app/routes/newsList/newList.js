@@ -45,6 +45,7 @@ module.exports = app => {
             message = res;
         }).catch(err => {
             message = err;
+            app.logger.error(err);
         })
         ctx.body = {"inserssss": message};
     });

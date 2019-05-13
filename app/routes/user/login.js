@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 module.exports = app =>{
-    router.post('/login', async function (ctx, next) {
+    router.post('/login', async (ctx, next) =>{
         try {
             const userPorems = ctx.request.body;
             let porems = {

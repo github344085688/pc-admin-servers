@@ -53,6 +53,7 @@ module.exports = function (app) {
         if ( RegExp('/user/').test(ctx.request.url)) {
             let isVerifyToken = await jwt.verify(ctx.header['x-access-token'], secretOrPrivateKey, async(err, decode)=> {
                 if (err) {
+                    app.logger.error("Token: " + err);
                     ctx.body={err:err};
                 } else {
                     return true;

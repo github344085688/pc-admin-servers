@@ -48,6 +48,7 @@ let service = (app, ctx) => {
             let pool = mysql.createPool(config);
             return await pool.query(sql);
         } catch (e) {
+            app.logger.error("Error from execSql: " + e);
             return e
         }
     }
