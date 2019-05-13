@@ -1,15 +1,120 @@
-Cache-Control:no-cache
-Content-Type:application/x-www-form-urlencoded
-Postman-Token:de1193c4-f636-4d8b-8d0f-f47f024c4901
-x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NTczOTM0NTMsImV4cCI6MTU1NzQ3OTg1M30.Kc-RM26D7FIJ1uGRn0IiElq0X8-QuZbmi-vvMkm8B-c
+curl -X POST \
+  http://localhost:3000/selects/6 \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: da230f77-85ae-45e6-acae-ba4756a26c94' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NDcwMDIwODEsImV4cCI6MTU0NzA4ODQ4MX0.2WtJk1X_l3j5jWDmODkVmrAFvMT4Qic341BB3vqMFiU' \
+  -d '{"id": 6,
+	"col01":76
+}'
+
+
+curl -X POST \
+  http://localhost:3000/login \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: b7d3101c-1fc8-45cd-a476-f4447ce6e349' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOm51bGwsImlhdCI6MTU1NjA5MjEwMiwiZXhwIjoxNTU2MTc4NTAyfQ.T8KNEN7j_2t6gPQuzL-uEwPZGRdS0K6YmsOfwYWF1-g' \
+  -d '{"userName":"qingZhong","passWord":"344085688"}'
+
+
+
 
 
 
 curl -X POST \
-  http://localhost:3000/uploadfile \
+  http://localhost:3000/signIn \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'Postman-Token: d9dbca33-249e-40e6-9802-6141ea514eee' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NTczOTM0NTMsImV4cCI6MTU1NzQ3OTg1M30.Kc-RM26D7FIJ1uGRn0IiElq0X8-QuZbmi-vvMkm8B-c' \
-  -F 'file=@C:\Users\f\Pictures\323653.jpg'
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 367f80d6-523d-483e-8ce8-982e3e1f829f' \
+  -d '{"userName":"qingZhong","passWord":"344085688"}'
+
+
+
+
+
+
+newList-select-by-paging///////////////////
+curl -X POST \
+  http://localhost:3000/newList-select-by-paging \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: bc84627b-9f61-467e-b418-596aeb334882' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NDcwMDIwODEsImV4cCI6MTU0NzA4ODQ4MX0.2WtJk1X_l3j5jWDmODkVmrAFvMT4Qic341BB3vqMFiU' \
+  -d '{
+	"col01":76,
+	"col02":76,
+	"col05":76,
+	"paging": {
+		"pageNo": 2,
+		"limit": 10
+
+	}
+}'
+
+
+
+curl -X DELETE \
+  http://localhost:3000/deleteList/1 \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: f680c6da-123b-447c-a5fc-b015d26b25ae' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NDcwMDIwODEsImV4cCI6MTU0NzA4ODQ4MX0.2WtJk1X_l3j5jWDmODkVmrAFvMT4Qic341BB3vqMFiU' \
+  -d '{
+
+}'
+
+
+
+
+curl -X POST \
+  http://localhost:3000/addnewList \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: f40ceb91-8dfe-4304-ab6b-e6249cc35894' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NDcwMDIwODEsImV4cCI6MTU0NzA4ODQ4MX0.2WtJk1X_l3j5jWDmODkVmrAFvMT4Qic341BB3vqMFiU' \
+  -d '[{
+	"col01":"72",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"72",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"73",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"76",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"76",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"76",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+},{
+	"col01":"76",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+}]'
+
+
+
+
+curl -X PUT \
+  http://localhost:3000/upnewList \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: f1cc2bcc-bd3a-4ba7-b6f4-185e90a0f3b0' \
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtc2ciOiJxaW5nWmhvbmczNDQwODU2ODgiLCJpYXQiOjE1NDcwMDIwODEsImV4cCI6MTU0NzA4ODQ4MX0.2WtJk1X_l3j5jWDmODkVmrAFvMT4Qic341BB3vqMFiU' \
+  -d '[{
+	"id":6,
+	"col01":"72",
+	"col02":"d",
+	"col03":"PHP 中使用函数 mysqli_query() 来执行 SQL 语句，你可以在 SQL UPDATE 语句中使用或者不使用 WHERE 子句。"
+}]'
