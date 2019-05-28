@@ -3,7 +3,7 @@ module.exports = app => {
         try {
             let userData = ctx.request.body;
             let porems = {
-                tableName: '/user',
+                tableName: '/mongouser',
                 dataBase: 'user',
                 insertData: ctx.request.body,
                 createIndex: userData['username']

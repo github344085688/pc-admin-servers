@@ -41,6 +41,12 @@
 let util = require('../commons/util');
 const mysql = require('promise-mysql');
 let service = (app, ctx) => {
+    /**
+     *
+     * @param sql
+     * @param dataBase
+     * @returns {Promise.<*>}
+     */
     async function execSql(sql, dataBase) {
         try {
             let config = mysqlConfig;
@@ -53,6 +59,11 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function selectTitleName(operationdb) {
         try {
             let countsql = `SHOW COLUMNS FROM  ${operationdb.tableName}`;
@@ -62,6 +73,11 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function selectTotalcountByDb(operationdb) {
         try {
             let sql = `SELECT COUNT(${operationdb.key}) as totalcount  FROM ${operationdb.tableName}`;
@@ -71,6 +87,12 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param porems
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function insertDbs(porems, operationdb) {
         try {
             let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
@@ -102,6 +124,12 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param porems
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function updateDbs(porems, operationdb) {
         try {
             let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
@@ -122,6 +150,12 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function deleteDb(id, operationdb) {
         try {
             let sql = `DELETE FROM ${operationdb.tableName} WHERE id=${id}`;
@@ -131,6 +165,13 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param porems
+     * @param operationdb
+     * @param selectkey
+     * @returns {Promise.<*>}
+     */
     async function selectByPagingDb(porems, operationdb, selectkey ) {
         try {
             let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
@@ -158,6 +199,12 @@ let service = (app, ctx) => {
         }
     }
 
+    /**
+     *
+     * @param porems
+     * @param operationdb
+     * @returns {Promise.<*>}
+     */
     async function selectDetail (porems, operationdb) {
         let filterTitleName = _.pull(_.map(await selectTitleName(operationdb), 'Field'), 'id');
         let searchCriteriaByKey =_.keys(_.pick(porems, filterTitleName));
@@ -174,11 +221,29 @@ let service = (app, ctx) => {
         return await execSql(sql, operationdb.dataBase)
     }
 
+    /**
+     *
+     * @param porems
+     * @param id
+     * @returns {Promise.<*>}
+     */
     async function selectId (porems, id) {
         let sql = `SELECT * FROM ${porems.tableName} WHERE id=${id}`;
         return await execSql(sql, porems.dataBase)
     }
 
+    /**
+     *
+     * @param porems
+     * @param condition
+     * @returns {Promise.<*>}
+     */
+    async function selectDetal(porems,condition) {
+        let conditionByKey = _.toString(_.keys(condition));
+        let sql = `SELECT * FROM ${porems.tableName} WHERE ${conditionByKey}='${condition[conditionByKey]}'`;
+        return await execSql(sql, porems.dataBase)
+
+    }
 
     return {
         insertDbs,
@@ -187,6 +252,7 @@ let service = (app, ctx) => {
         selectByPagingDb,
         selectDetail,
         selectId,
+        selectDetal,
         execSql
     }
 

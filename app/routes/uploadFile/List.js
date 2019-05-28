@@ -1,5 +1,5 @@
 module.exports = app => {
-    router.post('/user/lser', async (ctx, next)=> {
+    router.post('/mongouser/lser', async (ctx, next)=> {
         let porems = ctx.request.body;
         let message;
         await mysqlOperation(this).selectByPagingDb(porems, {

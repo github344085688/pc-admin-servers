@@ -50,7 +50,7 @@ module.exports = function (app) {
         // app.use(jwtKoa({secret}).unless({
         //     path: [/^\/api\/login/,/^\/api\/signIn/,/^\/api\/createbd/] //数组中的路径不需要通过jwt验证
         // }));
-        if ( RegExp('/user/').test(ctx.request.url)) {
+        if ( RegExp('/mongouser/').test(ctx.request.url)) {
             let isVerifyToken = await jwt.verify(ctx.header['x-access-token'], secretOrPrivateKey, async(err, decode)=> {
                 if (err) {
                     app.logger.error("Token: " + err);
