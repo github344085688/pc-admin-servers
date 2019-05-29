@@ -36,6 +36,7 @@ module.exports = app => {
             message[0].token = token;
             await mysqlOperation(this).updateDbs(message, dataBase).then(res => {
                 if (res.protocol41) {
+                     console.log(ctx.session.captcha);
                     ctx.body = message;
                 }
             }).catch(err => {

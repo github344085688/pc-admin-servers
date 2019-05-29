@@ -7,6 +7,7 @@ require('./services')(app);
 require('./apiconfig')(app);
 require('./conf.js')(app);
 require('./logger.js')(app);
+require('./session.js')(app);
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(function(ctx, next){

@@ -1,9 +1,9 @@
 'use strict';
-var os = require('os'),
+const os = require('os'),
     path = require('path'),
     moment = require('moment'),
     winston = require('winston');
-module.exports = function (app) {
+module.exports = (app)=> {
     let transports = [];
 
     const myFormat = winston.format.printf(({ level, message, label, timestamp }) => {

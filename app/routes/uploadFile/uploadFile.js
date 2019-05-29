@@ -16,7 +16,7 @@ module.exports = app => {
         }
     }
     let upload = multer({storage: storage, fileFilter: fileFilter});
-    router.post('/uploadfile', upload.single('file'), async ctx => {
+    router.post('/user/uploadfile', upload.single('file'), async ctx => {
         if (ctx.req.file) {
             let savePath = path.join('/images', ctx.req.file.filename);
             savePath = await digitSymbol(this).digitSymbols(savePath, '/');

@@ -1,8 +1,8 @@
 'use strict';
-var fs = require('fs'),
+const fs = require('fs'),
     config = require('config')
 
-module.exports = function (app) {
+module.exports =  (app)=> {
     app.conf = config;
     app.conf.baseDir = __dirname;
     // caCerts.push(fs.readFileSync(__dirname + '/cacert/AlphaSSLCA.cer'));
