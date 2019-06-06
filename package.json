@@ -12,6 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "config": "^3.1.0",
+    "forever-monitor": "^1.7.1",
     "js-yaml": "^3.13.1",
     "jsonwebtoken": "^8.4.0",
     "koa": "^2.5.2",

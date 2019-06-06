@@ -8,9 +8,9 @@ module.exports = app => {
     app.use(cors());
     app.use(serve(path.resolve('publick', 'upload')));
     (function requestRoutes(dirname) {
-        fs.readdirSync(dirname).forEach(file => {//同步 readdir().返回文件数组列表
+        fs.readdirSync(dirname).forEach(file => {
             let filePath = path.join(dirname, file);
-            if (fs.statSync(filePath).isDirectory()) { //同步 stat(). 返回 fs.Stats 的实例。//isDirectory()是否是文件夹
+            if (fs.statSync(filePath).isDirectory()) {
                 requestRoutes(filePath)
             } else {
                 requestRouteFile(filePath)
@@ -21,9 +21,8 @@ module.exports = app => {
             if (!filePath.endsWith('index.js') && path.extname(filePath) === '.js') {
                 try {
                     require(filePath)(app);
-                    // app.logger.info('loaded route from ' + filePath);
                 } catch (err) {
-                    // console.log('Error loading route from ' + filePath, err);
+                    app.logger.error('Error loading route from isDirectory', err);
                 }
             }
         }

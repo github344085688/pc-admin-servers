@@ -4,3 +4,4 @@ uploadfile
 login,signIn,captcha,session
 lodash
 logs
+# 设置多进程（高并发）

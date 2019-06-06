@@ -8,12 +8,14 @@ module.exports = app => {
                 dataBase: 'users',
                 tableName: 'user'
             };
+            console.log(1111)
             await mysqlOperation(this).selectDetal(dataBase, {userName: porems.userName}).then(res => {
                 message = res;
+                console.log(2222)
             }).catch(err => {
                 message = err;
             });
-
+            console.log(33333)
             if (message.length < 1) {
                 ctx.body = {
                     msg: 'The userName does not exist. ',

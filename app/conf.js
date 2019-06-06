@@ -4,7 +4,7 @@ const fs = require('fs'),
 
 module.exports =  (app)=> {
     app.conf = config;
-    app.conf.baseDir = __dirname;
+    // app.conf.baseDir = __dirname;
     // caCerts.push(fs.readFileSync(__dirname + '/cacert/AlphaSSLCA.cer'));
     // app.baseUrl = app.conf.get('targets.app.baseUrl');
     // Upstream backend app

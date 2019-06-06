@@ -17,6 +17,12 @@ module.exports = (app)=> {
         level: 'error',
         prettyPrint: _jsonPrettyPrint
     }));
+    transports.push(new (winston.transports.File)({
+        filename: path.join(app.conf.get('log.path'), 'info.log' + workerIdSuffix),
+        json: false,
+        level: 'info',
+        prettyPrint: _jsonPrettyPrint
+    }));
 
     app.logger = winston.createLogger({
         format: winston.format.combine(
@@ -26,15 +32,7 @@ module.exports = (app)=> {
         ),
         transports: transports,
         exceptionHandlers: [
-            new (winston.transports.File)({
-                filename: path.join(app.conf.get('log.path'), 'error.log' + workerIdSuffix),
-                json: false,
-                prettyPrint: _jsonPrettyPrint
-            }),
-            new (winston.transports.Console)({
-                colorize: true,
-                prettyPrint: _jsonPrettyPrint
-            })
+
         ]
     });
 

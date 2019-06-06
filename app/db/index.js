@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = app => {
     app.services = app.services || {};
     (function requestServices(dirname) {
-        fs.readdirSync(dirname).forEach(function (file) {
+        fs.readdirSync(dirname).forEach(file => {
             let filePath = path.join(dirname, file);
             if (fs.statSync(filePath).isDirectory()) { //同步 stat(). 返回 fs.Stats 的实例。//isDirectory()是否是文件夹
                 requestServices(filePath)

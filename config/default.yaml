@@ -1,6 +1,6 @@
 # default config file that property value can be override by current NODE_ENV config file
 server:
-  port: 8443
+  port: 3000
   appName: Business API Middleware
 
 system:
