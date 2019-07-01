@@ -1,18 +1,23 @@
 const Koa = require('koa');
 const app = new Koa();
-require('./commons/globals')(app);
-require('./routes')(app);
-require('./db')(app);
-require('./services')(app);
-require('./apiconfig')(app);
-require('./conf.js')(app);
-require('./logger.js')(app);
-require('./session.js')(app);
-require('./processesAndThreads')(app);
-app.use(router.routes());
-app.use(router.allowedMethods());
+const websockify = require('koa-websocket')
+// const ws = require('./ws')
+const wsOptions = {}
+websockify(app, wsOptions)
+require('./commons/globals')(app)
+require('./routes')(app)
+require('./db')(app)
+require('./services')(app)
+require('./apiconfig')(app)
+require('./conf.js')(app)
+require('./logger.js')(app)
+require('./session.js')(app)
+require('./processesAndThreads')(app)
+app.use(router.routes())
+app.ws.use(router.routes())
+app.use(router.allowedMethods())
 app.use(function(ctx, next){
-    return next().catch((err) => {
+    return next().catch(err => {
         if (401 == err.status) {
             ctx.status = 401;
             ctx.body = 'Protected resource, use Authorization header to get access\n';
@@ -20,7 +25,7 @@ app.use(function(ctx, next){
             throw err;
         }
     });
-});
+})
 
 app.on('error', (err, ctx) => {
     if (err.response && err.response.error) {
@@ -32,7 +37,7 @@ app.on('error', (err, ctx) => {
     if (err.remoteError) {
         app.logger.error(`Remote Error Detail`, _extractRemoteErrorDetail(err.remoteError));
     }
-});
+})
 
 function _extractHttpRespErrorDetail(error) {
     return _.join([error.message || "", error.text || ""], '\n')
@@ -59,4 +64,4 @@ function _extractRemoteErrorDetail(remoteError) {
     return JSON.stringify(remoteError, null, 2)
 }
 
-module.exports=app;
+module.exports=app

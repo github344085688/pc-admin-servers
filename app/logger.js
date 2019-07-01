@@ -3,7 +3,7 @@ const os = require('os'),
     path = require('path'),
     moment = require('moment'),
     winston = require('winston');
-module.exports = (app)=> {
+module.exports = app => {
     let transports = [];
 
     const myFormat = winston.format.printf(({ level, message, label, timestamp }) => {
@@ -47,7 +47,7 @@ module.exports = (app)=> {
     });
 
     app.accessLogger = {
-        log: function () {
+        log:  () => {
             this.request._endTime = this.request._endTime || new Date;
 
             let request = this.request,

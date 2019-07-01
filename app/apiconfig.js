@@ -3,7 +3,7 @@
  */
 const jwt = require('jsonwebtoken')
 const secretOrPrivateKey = "I am a goog man!" ;
-module.exports = (app)=> {
+module.exports = app => {
     app.use(async (ctx, next) => {
         // 允许来自所有域名请求
         ctx.set("Access-Control-Allow-Origin", "*");

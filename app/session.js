@@ -2,7 +2,7 @@
  * Created by f on 2019/5/29.
  */
 const session = require('koa-session');
-module.exports=(app)=>{
+module.exports= app =>{
     app.keys = ['some secret hurr']; /**cookie的签名*/
     const CONFIG = {
         key: 'koa:sess', /** 默认 */
