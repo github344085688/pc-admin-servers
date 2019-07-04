@@ -1,1 +1,62 @@
 2019-06-06T10:47:07+08:00 [right meow!] info: 2019-06-06 10:47:6 - [worker] 5208 exit.
+2019-06-26T16:04:01+08:00 [right meow!] error: TypeError: Cannot read property 'send' of undefined
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:51:23)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\pc-admin-servers\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\pc-admin-servers\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\pc-admin-servers\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\pc-admin-servers\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\pc-admin-servers\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-compose\index.js:42:32)
+    at session (E:\pc-admin-servers\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-compose\index.js:42:32)
+    at apiconfig (E:\pc-admin-servers\app\apiconfig.js:65:19)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-compose\index.js:42:32)
+    at app.use (E:\pc-admin-servers\app\apiconfig.js:47:15)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-compose\index.js:42:32)
+    at serve (E:\pc-admin-servers\node_modules\koa-static\index.js:53:15)
+    at dispatch (E:\pc-admin-servers\node_modules\koa-compose\index.js:42:32)
+2019-06-28T11:56:59+08:00 [right meow!] error: The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type object
+2019-06-28T12:17:48+08:00 [right meow!] error: The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type object
+2019-06-28T13:54:06+08:00 [right meow!] error: The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type object
+2019-06-28T13:55:41+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+2019-06-28T13:56:18+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+2019-06-28T17:13:29+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+2019-07-01T10:11:04+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:12:54+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:22:46+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:22:46+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:58:33+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:58:34+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T10:58:34+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:02:36+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:16:36+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:19:35+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:22:29+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:22:40+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:36:41+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:41:17+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:53:29+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:53:52+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:54:06+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:54:37+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:54:38+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:54:49+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:57:05+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:57:07+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:57:08+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:58:09+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:58:10+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:58:11+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T14:59:47+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T15:01:15+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T15:01:16+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T15:01:17+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-01T15:01:53+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'i' in 'where clause'
+2019-07-04T16:53:46+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'tas' in 'where clause'
+2019-07-04T17:04:18+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column '9C50835253CFA4B1EC2337C7DC4EE0BC' in 'where clause'
+2019-07-04T17:04:58+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column '9C50835253CFA4B1EC2337C7DC4EE0BC' in 'where clause'
+2019-07-04T17:06:19+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column '9C50835253CFA4B1EC2337C7DC4EE0BC' in 'where clause'
+2019-07-04T17:17:02+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+2019-07-04T17:17:43+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+2019-07-04T17:18:04+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
