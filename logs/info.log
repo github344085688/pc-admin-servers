@@ -60,3 +60,150 @@
 2019-07-04T17:17:02+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
 2019-07-04T17:17:43+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
 2019-07-04T17:18:04+08:00 [right meow!] error: Error from execSql: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+2019-07-11T17:55:13+08:00 [right meow!] error: Error from execSql: Error: ER_CON_COUNT_ERROR: Too many connections
+2019-07-29T15:31:48+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:04+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:06+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:07+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:08+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:08+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:11+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:33:13+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:34:41+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:34:51+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:34:52+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:34:53+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:36:26+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:36:27+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:36:28+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:36:29+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:39:26+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:40:14+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:41:15+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:42:23+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:42:41+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:45:03+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:45:38+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:45:53+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:47:19+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:47:28+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:54:05+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:55:43+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:55:52+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:56:39+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:15:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:59:22+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T15:59:58+08:00 [right meow!] error: ReferenceError: trace is not defined
+    at Object.httpClient.(anonymous function) [as post] (E:\pc-admin-servers\app\conf.js:14:101)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T16:03:26+08:00 [right meow!] error: TypeError: api is not a function
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:04:52+08:00 [right meow!] error: TypeError: api is not a function
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:04:57+08:00 [right meow!] error: TypeError: api is not a function
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:05:51+08:00 [right meow!] error: TypeError: Cannot read property 'post' of undefined
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:32)
+2019-07-29T16:13:09+08:00 [right meow!] error: Error from execSql: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM pagetest LIMIT 0,10' at line 1
+2019-07-29T16:14:03+08:00 [right meow!] error: Error from execSql: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM pagetest LIMIT 0,10' at line 1
+2019-07-29T16:32:37+08:00 [right meow!] error: ReferenceError: fn is not defined
+    at Object.post (E:\pc-admin-servers\app\conf.js:14:85)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:33)
+2019-07-29T16:35:06+08:00 [right meow!] error: Error: .end() was called twice. This is not supported in superagent
+    at Request.end (E:\pc-admin-servers\node_modules\superagent\lib\node\index.js:929:11)
+    at E:\pc-admin-servers\node_modules\superagent\lib\request-base.js:261:12
+    at new Promise (<anonymous>)
+    at RequestBase.then (E:\pc-admin-servers\node_modules\superagent\lib\request-base.js:252:31)
+2019-07-29T16:39:09+08:00 [right meow!] error: Error: .end() was called twice. This is not supported in superagent
+    at Request.end (E:\pc-admin-servers\node_modules\superagent\lib\node\index.js:929:11)
+    at E:\pc-admin-servers\node_modules\superagent\lib\request-base.js:261:12
+    at new Promise (<anonymous>)
+    at RequestBase.then (E:\pc-admin-servers\node_modules\superagent\lib\request-base.js:252:31)
+2019-07-29T16:44:17+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:12:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:45:10+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:12:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:46:13+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:12:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:40+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:42+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:43+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:44+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:45+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)
+2019-07-29T16:48:48+08:00 [right meow!] error: TypeError: Cannot read property 'forEach' of undefined
+    at upstreamApp (E:\pc-admin-servers\app\conf.js:11:46)
+    at router.post (E:\pc-admin-servers\app\routes\newsList\newList.js:10:24)

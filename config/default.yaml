@@ -9,3 +9,8 @@ system:
 
 log:
   path: logs/
+
+targets:
+  appApi:
+    baseUrl: http://localhost:3000
+

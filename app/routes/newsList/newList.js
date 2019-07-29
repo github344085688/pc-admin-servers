@@ -7,6 +7,18 @@ module.exports = app => {
         }).catch(err => {
             message = err;
         })
+        message= await api(ctx).post('/newList-select-by-paging', {
+            "col01":76,
+            "col02":76,
+            "col05":76,
+            "paging": {
+                "pageNo": 2,
+                "limit": 10
+
+            }
+        });
+
+        // console.log(message);
         ctx.body = {"inser": message};
     });
 
