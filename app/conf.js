@@ -11,8 +11,17 @@ module.exports = app => {
             ['get', 'post', 'delete', 'put'].forEach((method) => {
                 httpClient[method] = async (url, data) => {
                     let methodFn = superagent[method];
-                    let responsePromise =  await methodFn.call(null, baseUrl + url, data).set('Content-Type',"application/json;charset=UTF-8");
-                    return JSON.parse(responsePromise.text);
+                    let responsePromise = methodFn.call(null, baseUrl + url, data).set('Content-Type',"application/json;charset=UTF-8");
+                    try {
+                        let response = await responsePromise;
+                        return response.body;
+
+                    } catch (e) {
+                        return {
+                            err: url +'/'+ e.Error
+                        }
+                    };
+
                 }
             })
             return httpClient
